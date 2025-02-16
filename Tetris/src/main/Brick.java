@@ -37,4 +37,20 @@ public class Brick {
 		return colors[(int) (Math.random() * colors.length)];
 	}
 
+	/**
+	 * @return the position
+	 */
+	public Point getPosition() {
+		return position;
+	}
+
+	/**
+	 * @return the color
+	 */
+	public Color getColor() {
+		return color;
+	}
+	
+	
+
 }
