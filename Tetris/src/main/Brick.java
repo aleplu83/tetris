@@ -26,11 +26,11 @@ public class Brick {
 	}
 	
 	public void moveLeft() {
-		
+		position.x-=20;
 	}
 	
 	public void moveRight() {
-		
+		position.x+=20;
 	}
 	
 	private Color rndColor() {

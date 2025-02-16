@@ -10,7 +10,6 @@ public class Window {
 	private Board board;
 	
 	public Window() {
-		// TODO Auto-generated constructor stub
 		window = new JFrame("Tetris");
 		board = new Board();
 		window.add(board);
@@ -23,7 +22,6 @@ public class Window {
 	
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		new Window();
 	}
 
