@@ -10,10 +10,17 @@ public class Brick {
 	private Color[] colors = {Color.YELLOW,Color.BLUE,Color.RED,Color.MAGENTA};
 	
 	public Brick() {
-		color = rndColor();
-		position = new Point(250,400);
+		setColor(rndColor());
+		setPosition(new Point(250,400));
 	}
 	
+	/**
+	 * @param position the position to set
+	 */
+	public void setPosition(Point position) {
+		this.position = position;
+	}
+
 	public void rotate() {
 		
 	}
