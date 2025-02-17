@@ -8,12 +8,29 @@ public class Brick {
 	private Point position;
 	private Color color;
 	private Color[] colors = {Color.YELLOW,Color.BLUE,Color.RED,Color.MAGENTA};
+	private Shape[] shapes = {Shape.EShape,Shape.IShape,Shape.LShape,Shape.ZShape};
+	private Shape shape;
 	
+	/**
+	 * @return the shape
+	 */
+	public Shape getShape() {
+		return shape;
+	}
+
 	public Brick() {
 		setColor(rndColor());
 		setPosition(new Point(250,400));
+		setShape(shapes[((int)Math.random() * shapes.length)]);
 	}
 	
+	/**
+	 * @param shape the shape to set
+	 */
+	public void setShape(Shape shape) {
+		this.shape = shape;
+	}
+
 	/**
 	 * @param position the position to set
 	 */
