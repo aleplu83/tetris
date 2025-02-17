@@ -20,8 +20,10 @@ public class Brick {
 
 	public Brick() {
 		setColor(rndColor());
-		setPosition(new Point(250,400));
-		setShape(shapes[((int)Math.random() * shapes.length)]);
+		setPosition(new Point(230,40));
+		//setShape(shapes[((int)Math.random() * shapes.length)]);
+		setShape(Shape.EShape);
+		System.out.println(getShape().toString());
 	}
 	
 	/**
@@ -73,6 +75,11 @@ public class Brick {
 	 */
 	public Color getColor() {
 		return color;
+	}
+
+	public void fall() {
+		// TODO Auto-generated method stub
+		position.y+=20;
 	}
 	
 	

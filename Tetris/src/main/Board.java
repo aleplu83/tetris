@@ -14,6 +14,7 @@ public class Board extends JPanel implements Runnable,KeyListener {
 	 */
 	private static final long serialVersionUID = 1L;
 	private Brick brick;
+	private Thread thread;
 	
 	public Board() {
 		// TODO Auto-generated constructor stub
@@ -23,18 +24,24 @@ public class Board extends JPanel implements Runnable,KeyListener {
 		addKeyListener(this);
 		//create first brick
 		brick = new Brick();
+		thread = new Thread(this);
+		thread.start();
 	}
 
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		repaint();
-		try {
-			Thread.sleep(200);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		while(true) {
+			brick.fall();
+			repaint();
+			try {
+				Thread.sleep(400);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
+		
 	}
 
 	@Override
@@ -46,7 +53,14 @@ public class Board extends JPanel implements Runnable,KeyListener {
 
 	private void drawBrick(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.setColor(brick.getColor());		
+		switch (brick.getShape()) {
+		case EShape:
+			g2d.setColor(brick.getColor());
+			g2d.fillRect(brick.getPosition().x,brick.getPosition().y, 20, 20);
+			break;
+		}
+		
+		
 		g2d.dispose();
 	}
 
