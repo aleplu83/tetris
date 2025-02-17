@@ -9,6 +9,10 @@ import javax.swing.JPanel;
 
 public class Board extends JPanel implements Runnable,KeyListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Brick brick;
 	
 	public Board() {
