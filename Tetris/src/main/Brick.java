@@ -20,7 +20,7 @@ public class Brick {
 
 	public Brick() {
 		setColor(rndColor());
-		setPosition(new Point(230,40));
+		setPosition(new Point(200,20));
 		//setShape(shapes[((int)Math.random() * shapes.length)]);
 		setShape(Shape.EShape);
 		System.out.println(getShape().toString());
